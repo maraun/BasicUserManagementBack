@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @Entity
@@ -33,6 +34,15 @@ public class Profile extends AuditModel {
     @Column(name = "birthdate")
     private Date birthdate;
 
-    @Column(name = "nationality")
+    @ManyToOne
+    @Column(name = "nationality_id")
     private Nationality nationality;
+
+    @ManyToOne
+    @Column(name = "citizenship_id")
+    private Citizenship citizenship;
+
+    @ManyToOne
+    @Column(name = "gender_id")
+    private Gender gender;
 }
