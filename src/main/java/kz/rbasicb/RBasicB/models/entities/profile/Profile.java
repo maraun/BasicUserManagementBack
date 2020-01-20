@@ -45,4 +45,14 @@ public class Profile extends AuditModel {
     @ManyToOne
     @Column(name = "gender_id")
     private Gender gender;
+
+    @ManyToOne
+    @Column(name = "marital_status_id")
+    private MaritalStatus maritalStatus;
+
+    @Column(name = "registration_place")
+    private String registrationPlace;
+
+    @Column(name = "living_place")
+    private String livingPlace;
 }
