@@ -32,4 +32,7 @@ public class Profile extends AuditModel {
 
     @Column(name = "birthdate")
     private Date birthdate;
+
+    @Column(name = "nationality")
+    private Nationality nationality;
 }
