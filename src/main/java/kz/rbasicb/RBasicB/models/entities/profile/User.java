@@ -52,4 +52,8 @@ public class User extends AuditModel {
                     }
     )
     private Set<Role> roles = new HashSet<>();
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id")
+    private Profile profile;
 }

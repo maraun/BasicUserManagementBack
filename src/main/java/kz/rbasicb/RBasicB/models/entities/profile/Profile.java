@@ -55,4 +55,7 @@ public class Profile extends AuditModel {
 
     @Column(name = "living_place")
     private String livingPlace;
+
+    @Column(name = "photo_name")
+    private String photoname;
 }
