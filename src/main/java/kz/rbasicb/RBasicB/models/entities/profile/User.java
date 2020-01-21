@@ -60,7 +60,14 @@ public class User extends AuditModel {
     @OneToMany
     private Set<Document> documents = new HashSet<>();
 
+    @OneToMany
+    private Set<Position> positions = new HashSet<>();
+
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "contacts_id")
     private Contacts contacts;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "additional_information_id")
+    private Additional additional;
 }
