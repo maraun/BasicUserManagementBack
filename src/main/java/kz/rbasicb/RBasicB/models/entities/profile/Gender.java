@@ -17,5 +17,5 @@ public class Gender extends AuditModel {
     @Enumerated(EnumType.STRING)
     @NaturalId
     @Column(length = 60)
-    private CitizenshipName name;
+    private GenderName name;
 }

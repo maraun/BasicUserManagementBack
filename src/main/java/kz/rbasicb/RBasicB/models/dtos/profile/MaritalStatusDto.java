@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class CitizenshipDto extends BaseDto {
+public class MaritalStatusDto extends BaseDto {
     private String name;
 }
