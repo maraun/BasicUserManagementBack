@@ -1,6 +1,7 @@
 package kz.rbasicb.RBasicB.shared.security.services;
 
 import kz.rbasicb.RBasicB.models.entities.profile.User;
+import kz.rbasicb.RBasicB.repositories.profile.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
