@@ -6,11 +6,12 @@ import kz.rbasicb.RBasicB.repositories.profile.DocumentRepository;
 import kz.rbasicb.RBasicB.services.profile.DocumentService;
 import kz.rbasicb.RBasicB.shared.utils.codes.ErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class DocumentServiceImpl implements DocumentService {
     private DocumentRepository documentRepository;
     @Autowired

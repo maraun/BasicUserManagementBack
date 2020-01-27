@@ -6,11 +6,12 @@ import kz.rbasicb.RBasicB.repositories.profile.CitizenshipRepository;
 import kz.rbasicb.RBasicB.services.profile.CitizenshipService;
 import kz.rbasicb.RBasicB.shared.utils.codes.ErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CitizenshipServiceImpl implements CitizenshipService {
     private CitizenshipRepository citizenshipRepository;
     @Autowired

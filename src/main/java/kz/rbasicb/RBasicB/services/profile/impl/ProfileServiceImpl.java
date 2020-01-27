@@ -6,11 +6,12 @@ import kz.rbasicb.RBasicB.repositories.profile.ProfileRepository;
 import kz.rbasicb.RBasicB.services.profile.ProfileService;
 import kz.rbasicb.RBasicB.shared.utils.codes.ErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ProfileServiceImpl  implements ProfileService {
     private ProfileRepository profileRepository;
     @Autowired

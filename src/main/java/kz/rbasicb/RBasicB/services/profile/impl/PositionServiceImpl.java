@@ -6,11 +6,12 @@ import kz.rbasicb.RBasicB.repositories.profile.PositionRepository;
 import kz.rbasicb.RBasicB.services.profile.PositionService;
 import kz.rbasicb.RBasicB.shared.utils.codes.ErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class PositionServiceImpl implements PositionService {
     private PositionRepository positionRepository;
     @Autowired
