@@ -9,6 +9,6 @@ public interface MaritalStatusService {
     MaritalStatus findById(Long id) throws ServiceException;
     List<MaritalStatus> findAll();
     void deleteById(Long id) throws ServiceException;
-    MaritalStatus save() throws ServiceException;
-    MaritalStatus update() throws ServiceException;
+    MaritalStatus save(MaritalStatus maritalStatus) throws ServiceException;
+    MaritalStatus update(MaritalStatus maritalStatus) throws ServiceException;
 }
