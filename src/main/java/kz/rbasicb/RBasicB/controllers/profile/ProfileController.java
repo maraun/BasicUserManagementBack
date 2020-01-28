@@ -26,6 +26,7 @@ public class ProfileController extends BaseController {
     }
 
     @GetMapping
+    @CrossOrigin
     public ResponseEntity<?> getAll(){
         return buildResponse(profileMapper.toDtoList(profileService.findAll()), HttpStatus.OK);
     }
