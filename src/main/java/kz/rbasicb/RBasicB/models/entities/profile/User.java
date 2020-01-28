@@ -57,10 +57,10 @@ public class User extends AuditModel {
     @JoinColumn(name = "profile_id")
     private Profile profile;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Document> documents = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private Set<Position> positions = new HashSet<>();
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
