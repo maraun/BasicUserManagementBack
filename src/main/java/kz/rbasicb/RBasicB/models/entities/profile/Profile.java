@@ -13,7 +13,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@Builder
+/*@Builder*/
 public class Profile extends AuditModel {
 
     @Column(name="firstname")
@@ -35,19 +35,15 @@ public class Profile extends AuditModel {
     private Date birthdate;
 
     @ManyToOne
-    @Column(name = "nationality_id")
     private Nationality nationality;
 
     @ManyToOne
-    @Column(name = "citizenship_id")
     private Citizenship citizenship;
 
     @ManyToOne
-    @Column(name = "gender_id")
     private Gender gender;
 
     @ManyToOne
-    @Column(name = "marital_status_id")
     private MaritalStatus maritalStatus;
 
     @Column(name = "registration_place")
