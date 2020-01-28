@@ -16,13 +16,13 @@ public class BaseDto {
     private Long id;
 
 /*    @ApiModelProperty(notes = "Момент создания элемента", readOnly = true)*/
-    private Date createdAt;
+/*    private Date createdAt;*/
 
 /*    @ApiModelProperty(notes = "Момент обновления элемента", readOnly = true)*/
-    private Date updatedAt;
+/*    private Date updatedAt;*/
 
 /*    @ApiModelProperty(notes = "Момент удаления элемента", readOnly = true)*/
-    private Date deletedAt;
+/*    private Date deletedAt;*/
 
 
 }
