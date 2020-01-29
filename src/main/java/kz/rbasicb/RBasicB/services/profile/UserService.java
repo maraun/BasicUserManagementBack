@@ -16,4 +16,5 @@ public interface UserService /*extends UserDetailsService*/ {
     void deleteById(Long id) throws ServiceException;
     /*    Set getAuthority(User user);*/
     User findByUsername(String username);
+    User findByProfileId(Long id) throws ServiceException;
 }

@@ -128,6 +128,15 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public User findByProfileId(Long id) throws ServiceException {
+        Optional<User> userOptional = userRepository.findByProfileId(id);
+        return userOptional.orElseThrow(() -> ServiceException.builder()
+                .errorCode(ErrorCode.RESOURCE_NOT_FOUND)
+                .message("User not found")
+                .build());
+    }
+
 /*    @Override
     public Set getAuthority(User user) {
         Set authorities = new HashSet<>();

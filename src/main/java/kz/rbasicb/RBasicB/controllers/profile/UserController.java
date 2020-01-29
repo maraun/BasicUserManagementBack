@@ -38,6 +38,11 @@ public class UserController extends BaseController {
     public ResponseEntity<?> getOne(@PathVariable Long id) throws ServiceException {
         return buildResponse(userMapper.toDto(userService.findById(id)), HttpStatus.OK);
     }
+    @CrossOrigin
+    @GetMapping("pid/{id}")
+    public ResponseEntity<?> getOneByProfileId(@PathVariable Long id) throws ServiceException {
+        return buildResponse(userMapper.toDto(userService.findByProfileId(id)), HttpStatus.OK);
+    }
 
     @PostMapping
     public ResponseEntity<?> add(@RequestBody UserDto userDto) throws ServiceException {
