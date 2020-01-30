@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,6 +21,9 @@ public class UserController extends BaseController {
 
     private UserService userService;
     private UserMapper userMapper;
+
+    @Autowired
+    private PasswordEncoder encoder;
 
     @Autowired
     public UserController(UserService userService, UserMapper userMapper) {
@@ -74,10 +78,13 @@ public class UserController extends BaseController {
         userService.delete(userMapper.toEntity(userDto));
         return buildResponse(SuccessResponse.builder().message("deleted").build(), HttpStatus.OK);
     }*/
-
+    @CrossOrigin
     @RequestMapping(method = {RequestMethod.PATCH, RequestMethod.PUT})
     public ResponseEntity<?> update(@RequestBody UserDto userDto) throws ServiceException {
-        User user = userService.update(userMapper.toEntity(userDto));
+        User user2 = userMapper.toEntity(userDto);
+        String epassword = user2.getPassword();
+        user2.setPassword(encoder.encode(epassword));
+        User user = userService.update(user2);
         return buildResponse(SuccessResponse.builder()
                 .message("updated")
                 .data(userMapper.toDto(user))

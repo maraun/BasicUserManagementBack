@@ -11,7 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class UserDto extends BaseDto {
     private String username;
-/*    private String password;*/
+    private String password;
     private Set<RoleDto> roles = new HashSet<>();
     private ProfileDto profile;
     private Set<DocumentDto> documents = new HashSet<>();
