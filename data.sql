@@ -30,11 +30,11 @@ INSERT INTO rbasic.positions (id, created_at, deleted_at, updated_at, finishtime
 INSERT INTO rbasic.positions (id, created_at, deleted_at, updated_at, finishtime, organization, position, starttime) VALUES (4, '2020-01-28 08:59:06', null, '2020-01-28 08:59:08', '2019-01-28 08:59:09', 'Gazprom', 'Manager', '2011-01-28 08:59:26');
 INSERT INTO rbasic.positions (id, created_at, deleted_at, updated_at, finishtime, organization, position, starttime) VALUES (5, '2020-01-28 08:59:34', null, '2020-01-28 08:59:35', '2017-01-28 08:59:37', 'BRK', 'Head of office', '2009-01-28 09:00:11');
 
-INSERT INTO rbasic.users (id, created_at, deleted_at, updated_at, password, username, additional_information_id, contacts_id, profile_id) VALUES (1, '2020-01-28 09:05:49', null, '2020-01-28 09:05:52', '$2a$10$5b2PZB.tyXr7uKcHX3d3reWS4zmRX7jNW03aZCLX4.feEdoJJepDq', 'henry', 1, 1, 1);
-INSERT INTO rbasic.users (id, created_at, deleted_at, updated_at, password, username, additional_information_id, contacts_id, profile_id) VALUES (2, '2020-01-28 09:07:30', null, '2020-01-28 09:07:33', '$2a$10$5b2PZB.tyXr7uKcHX3d3reWS4zmRX7jNW03aZCLX4.feEdoJJepDq', 'anna', 2, 2, 2);
-
 INSERT INTO rbasic.profile (id, created_at, deleted_at, updated_at, birthdate, firstname, iin, lastname, living_place, middlename, photo_name, previous_lastname, registration_place, citizenship_id, gender_id, marital_status_id, nationality_id) VALUES (1, '2020-01-28 09:01:04', null, '2020-01-28 09:01:05', '1987-01-28 09:01:07', 'Henry', '870128123456', 'Joshua', 'Abaya 103', 'Sun', 'joshua45', null, 'Kabanbai batyr 555', 3, 1, 1, 3);
 INSERT INTO rbasic.profile (id, created_at, deleted_at, updated_at, birthdate, firstname, iin, lastname, living_place, middlename, photo_name, previous_lastname, registration_place, citizenship_id, gender_id, marital_status_id, nationality_id) VALUES (2, '2020-01-28 09:03:00', null, '2020-01-28 09:03:01', '1990-01-28 09:03:04', 'Anna', '900128654789', 'Karenina', 'Kabanbai batyr', 'Andereyevna', 'anna789', 'Sun', 'Abaya123', 2, 2, 2, 2);
+
+INSERT INTO rbasic.users (id, created_at, deleted_at, updated_at, password, username, additional_information_id, contacts_id, profile_id) VALUES (1, '2020-01-28 09:05:49', null, '2020-01-28 09:05:52', '$2a$10$5b2PZB.tyXr7uKcHX3d3reWS4zmRX7jNW03aZCLX4.feEdoJJepDq', 'henry', 1, 1, 1);
+INSERT INTO rbasic.users (id, created_at, deleted_at, updated_at, password, username, additional_information_id, contacts_id, profile_id) VALUES (2, '2020-01-28 09:07:30', null, '2020-01-28 09:07:33', '$2a$10$5b2PZB.tyXr7uKcHX3d3reWS4zmRX7jNW03aZCLX4.feEdoJJepDq', 'anna', 2, 2, 2);
 
 INSERT INTO rbasic.roles (id, created_at, deleted_at, updated_at, name) VALUES (1, '2020-01-28 09:05:18', null, '2020-01-28 09:05:22', 'ROLE_USER');
 INSERT INTO rbasic.roles (id, created_at, deleted_at, updated_at, name) VALUES (2, '2020-01-28 09:05:20', null, '2020-01-28 09:05:23', 'ROLE_PM');
