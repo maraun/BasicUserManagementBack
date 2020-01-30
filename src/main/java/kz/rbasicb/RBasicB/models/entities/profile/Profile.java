@@ -1,13 +1,10 @@
 package kz.rbasicb.RBasicB.models.entities.profile;
 
 import kz.rbasicb.RBasicB.models.audits.AuditModel;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -34,16 +31,16 @@ public class Profile extends AuditModel {
     @Column(name = "birthdate")
     private Date birthdate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Nationality nationality;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Citizenship citizenship;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Gender gender;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private MaritalStatus maritalStatus;
 
     @Column(name = "registration_place")
