@@ -65,6 +65,8 @@ public class UserServiceImpl implements UserService {
                     .message("User is null")
                     .build();
         }
+        String password = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(password);
         return  userRepository.save(user);
     }
 
@@ -76,7 +78,8 @@ public class UserServiceImpl implements UserService {
                     .message("User is already exists")
                     .build();
         }
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        String password = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(password);
         return  userRepository.save(user);
     }
 
