@@ -8,7 +8,7 @@ import kz.rbasicb.RBasicB.shared.utils.codes.ErrorCode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManagerFactory;
@@ -25,7 +25,8 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private SessionFactory hibernateFactory;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    private PasswordEncoder encoder;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository,
@@ -65,7 +66,7 @@ public class UserServiceImpl implements UserService {
                     .message("User is null")
                     .build();
         }
-        String password = bCryptPasswordEncoder.encode(user.getPassword());
+        String password = encoder.encode(user.getPassword());
         user.setPassword(password);
         return  userRepository.save(user);
     }
@@ -78,7 +79,7 @@ public class UserServiceImpl implements UserService {
                     .message("User is already exists")
                     .build();
         }
-        String password = bCryptPasswordEncoder.encode(user.getPassword());
+        String password = encoder.encode(user.getPassword());
         user.setPassword(password);
         return  userRepository.save(user);
     }
