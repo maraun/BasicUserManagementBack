@@ -14,7 +14,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Nationality extends AuditModel {
-
     @Column(length = 60)
     private String name;
 }
