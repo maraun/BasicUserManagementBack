@@ -1,6 +1,20 @@
 INSERT INTO rbasic.additional (id, created_at, deleted_at, updated_at, information) VALUES (1, '2020-01-28 08:32:06', null, '2020-01-28 08:32:12', 'Additional information for id1');
 INSERT INTO rbasic.additional (id, created_at, deleted_at, updated_at, information) VALUES (2, '2020-01-28 08:34:10', null, '2020-01-28 08:34:11', 'Additional information for id2');
 
+INSERT INTO rbasic.citizenship (id, created_at, deleted_at, updated_at, name) VALUES (1, '2020-01-31 16:23:09', null, '2020-01-31 16:23:11', 'KAZAKHSTAN');
+INSERT INTO rbasic.citizenship (id, created_at, deleted_at, updated_at, name) VALUES (2, '2020-01-31 16:23:23', null, '2020-01-31 16:23:23', 'RUSSIA');
+INSERT INTO rbasic.citizenship (id, created_at, deleted_at, updated_at, name) VALUES (3, '2020-01-31 16:23:36', null, '2020-01-31 16:23:37', 'USA');
+
+INSERT INTO rbasic.genders (id, created_at, deleted_at, updated_at, name) VALUES (1, '2020-01-31 16:24:15', null, '2020-01-31 16:24:16', 'MALE');
+INSERT INTO rbasic.genders (id, created_at, deleted_at, updated_at, name) VALUES (2, '2020-01-31 16:24:23', null, '2020-01-31 16:24:24', 'FEMALE');
+
+INSERT INTO rbasic.marital_status (id, created_at, deleted_at, updated_at, name) VALUES (1, '2020-01-31 16:24:45', null, '2020-01-31 16:24:48', 'SINGLE');
+INSERT INTO rbasic.marital_status (id, created_at, deleted_at, updated_at, name) VALUES (2, '2020-01-31 16:24:54', null, '2020-01-31 16:24:55', 'MARRIED');
+
+INSERT INTO rbasic.nationalities (id, created_at, deleted_at, updated_at, name) VALUES (1, '2020-01-31 16:25:14', null, '2020-01-31 16:25:15', 'KAZAKH');
+INSERT INTO rbasic.nationalities (id, created_at, deleted_at, updated_at, name) VALUES (2, '2020-01-31 16:25:20', null, '2020-01-31 16:25:21', 'RUSSIAN');
+INSERT INTO rbasic.nationalities (id, created_at, deleted_at, updated_at, name) VALUES (3, '2020-01-31 16:25:27', null, '2020-01-31 16:25:29', 'AMERICAN');
+
 INSERT INTO rbasic.citizenship (id, created_at, deleted_at, updated_at, name) VALUES (1, '2020-01-28 08:32:40', null, '2020-01-28 08:32:42', 'KAZAKHSTAN');
 INSERT INTO rbasic.citizenship (id, created_at, deleted_at, updated_at, name) VALUES (2, '2020-01-28 08:32:55', null, '2020-01-28 08:32:59', 'RUSSIANFEDERATION');
 INSERT INTO rbasic.citizenship (id, created_at, deleted_at, updated_at, name) VALUES (3, '2020-01-28 08:33:53', null, '2020-01-28 08:33:55', 'USA');
