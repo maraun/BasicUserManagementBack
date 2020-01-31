@@ -24,7 +24,7 @@ public class MaritalStatusController extends BaseController {
         this.maritalStatusService = maritalStatusService;
         this.maritalStatusMapper = maritalStatusMapper;
     }
-
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<?> getAll(){
         return buildResponse(maritalStatusMapper.toDtoList(maritalStatusService.findAll()), HttpStatus.OK);

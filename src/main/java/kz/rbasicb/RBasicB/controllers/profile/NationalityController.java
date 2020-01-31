@@ -24,7 +24,7 @@ public class NationalityController extends BaseController {
         this.nationalityService = nationalityService;
         this.nationalityMapper = nationalityMapper;
     }
-
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<?> getAll(){
         return buildResponse(nationalityMapper.toDtoList(nationalityService.findAll()), HttpStatus.OK);

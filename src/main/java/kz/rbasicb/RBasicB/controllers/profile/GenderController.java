@@ -24,7 +24,7 @@ public class GenderController extends BaseController {
         this.genderService = genderService;
         this.genderMapper = genderMapper;
     }
-
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<?> getAll(){
         return buildResponse(genderMapper.toDtoList(genderService.findAll()), HttpStatus.OK);

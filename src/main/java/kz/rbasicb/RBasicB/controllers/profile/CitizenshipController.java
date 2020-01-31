@@ -25,8 +25,9 @@ public class CitizenshipController extends BaseController {
         this.citizenshipMapper = citizenshipMapper;
     }
 
+    @CrossOrigin
     @GetMapping
-    public ResponseEntity<?> getAll(){
+    public ResponseEntity<?> getAll() {
         return buildResponse(citizenshipMapper.toDtoList(citizenshipService.findAll()), HttpStatus.OK);
     }
 
@@ -37,16 +38,16 @@ public class CitizenshipController extends BaseController {
     }
 
     @PostMapping
-    public ResponseEntity<?> add(@RequestBody CitizenshipDto citizenshipDto) throws ServiceException{
+    public ResponseEntity<?> add(@RequestBody CitizenshipDto citizenshipDto) throws ServiceException {
         Citizenship citizenship = citizenshipMapper.toEntity(citizenshipDto);
         citizenship = citizenshipService.save(citizenship);
-        return buildResponse(citizenshipMapper.toDto(citizenship),HttpStatus.OK);
+        return buildResponse(citizenshipMapper.toDto(citizenship), HttpStatus.OK);
     }
 
     @DeleteMapping
-    public ResponseEntity<?> delete (@RequestBody CitizenshipDto citizenshipDto) throws ServiceException{
+    public ResponseEntity<?> delete(@RequestBody CitizenshipDto citizenshipDto) throws ServiceException {
         citizenshipService.deleteById((citizenshipMapper.toEntity(citizenshipDto)).getId());
-        return buildResponse(SuccessResponse.builder().message("deleted").build(),HttpStatus.OK);
+        return buildResponse(SuccessResponse.builder().message("deleted").build(), HttpStatus.OK);
     }
 
     @RequestMapping(method = {RequestMethod.PATCH, RequestMethod.PUT})
@@ -57,7 +58,6 @@ public class CitizenshipController extends BaseController {
                 .data(citizenshipMapper.toDto(citizenship))
                 .build(), HttpStatus.OK);
     }
-
 
 
 }
