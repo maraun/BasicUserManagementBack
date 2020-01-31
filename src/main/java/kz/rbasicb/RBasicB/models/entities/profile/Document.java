@@ -16,11 +16,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class Document extends AuditModel {
 
-    @Enumerated(EnumType.STRING)
-    @NaturalId
     @Column(length = 60)
-    @Transient
-    private DocumentType type;
+    private String type;
 
     @Column(name = "identity_number")
     private String identityNumber;

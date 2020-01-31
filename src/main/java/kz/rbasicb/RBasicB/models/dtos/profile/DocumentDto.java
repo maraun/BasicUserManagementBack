@@ -1,11 +1,9 @@
 package kz.rbasicb.RBasicB.models.dtos.profile;
 
 import kz.rbasicb.RBasicB.models.dtos.base.BaseDto;
-import kz.rbasicb.RBasicB.models.entities.profile.DocumentType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import java.util.Date;
 
 @Data

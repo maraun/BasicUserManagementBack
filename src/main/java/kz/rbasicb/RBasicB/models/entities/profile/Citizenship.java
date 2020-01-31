@@ -14,9 +14,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Citizenship extends AuditModel {
-    @Enumerated(EnumType.STRING)
-    @NaturalId
     @Column(length = 60)
-    @Transient
-    private CitizenshipName name;
+    private String name;
 }
