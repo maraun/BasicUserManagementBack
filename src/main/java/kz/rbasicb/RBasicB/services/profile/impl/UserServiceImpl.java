@@ -94,6 +94,7 @@ public class UserServiceImpl implements UserService {
         }
         user = findById(user.getId());
         user.setDeletedAt(new Date());
+        user.getProfile().setDeletedAt(new Date());
         userRepository.save(user);
     }
 
@@ -107,6 +108,7 @@ public class UserServiceImpl implements UserService {
         }
         User user = findById(id);
         user.setDeletedAt(new Date());
+        user.getProfile().setDeletedAt(new Date());
         userRepository.save(user);
     }
 
