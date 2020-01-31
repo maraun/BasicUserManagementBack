@@ -29,9 +29,8 @@ public class User extends AuditModel {
     private String password;
 
     @ManyToMany(
-            fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL
-    )
+            fetch = FetchType.EAGER
+                )
     @JoinTable(
             name = "user_roles",
             joinColumns =
@@ -57,10 +56,10 @@ public class User extends AuditModel {
     @JoinColumn(name = "profile_id")
     private Profile profile;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Document> documents = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Position> positions = new HashSet<>();
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -68,6 +67,5 @@ public class User extends AuditModel {
     private Contacts contacts;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "additional_information_id")
     private Additional additional;
 }

@@ -17,5 +17,6 @@ public class MaritalStatus extends AuditModel {
     @Enumerated(EnumType.STRING)
     @NaturalId
     @Column(length = 60)
+    @Transient
     private MaritalStatusName name;
 }

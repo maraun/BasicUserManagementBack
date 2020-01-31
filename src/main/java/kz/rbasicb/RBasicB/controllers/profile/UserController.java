@@ -47,8 +47,7 @@ public class UserController extends BaseController {
     @CrossOrigin
     @PostMapping
     public ResponseEntity<?> add(@RequestBody UserDto userDto) throws ServiceException {
-        User user = userMapper.toEntity(userDto);
-        user = userService.save(user);
+        User user = userService.save(userMapper.toEntity(userDto));
         return buildResponse(userMapper.toDto(user), HttpStatus.OK);
     }
 
@@ -79,10 +78,11 @@ public class UserController extends BaseController {
     @RequestMapping(method = {RequestMethod.PATCH, RequestMethod.PUT})
     public ResponseEntity<?> update(@RequestBody UserDto userDto) throws ServiceException {
         User user = userService.update(userMapper.toEntity(userDto));
-        return buildResponse(SuccessResponse.builder()
+        return buildResponse(userMapper.toDto(user), HttpStatus.OK);
+/*        return buildResponse(SuccessResponse.builder()
                 .message("updated")
                 .data(userMapper.toDto(user))
-                .build(), HttpStatus.OK);
+                .build(), HttpStatus.OK);*/
     }
 
     @CrossOrigin

@@ -31,16 +31,16 @@ public class Profile extends AuditModel {
     @Column(name = "birthdate")
     private Date birthdate;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private Nationality nationality;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private Citizenship citizenship;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private Gender gender;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private MaritalStatus maritalStatus;
 
     @Column(name = "registration_place")
