@@ -7,10 +7,7 @@ import kz.rbasicb.RBasicB.services.profile.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/profile/roles")
@@ -26,10 +23,11 @@ public class RoleController extends BaseController {
     }
 
     @GetMapping
+    @CrossOrigin
     public ResponseEntity<?> getAll(){
         return buildResponse(roleMapper.toDtoList(roleService.findAll()), HttpStatus.OK);
     }
-
+    @CrossOrigin
     @GetMapping("{id}")
     public ResponseEntity<?> getOne(@PathVariable Long id) throws ServiceException {
         return buildResponse(roleMapper.toDto(roleService.findById(id)), HttpStatus.OK);
