@@ -62,7 +62,7 @@ public class UserController extends BaseController {
 
     }*/
 
-@CrossOrigin
+    @CrossOrigin
     @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) throws ServiceException {
         userService.deleteById(id);
