@@ -21,7 +21,7 @@ public class GroupRolesController extends BaseController {
         this.groupRolesService = groupRolesService;
         this.groupRolesMapper = groupRolesMapper;
     }
-
+    @CrossOrigin
     @GetMapping
     public ResponseEntity<?> getAll(){
         return buildResponse(groupRolesMapper.toDtoList(groupRolesService.findAll()), HttpStatus.OK);
