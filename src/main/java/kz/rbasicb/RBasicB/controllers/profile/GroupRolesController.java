@@ -27,7 +27,7 @@ public class GroupRolesController extends BaseController {
         return buildResponse(groupRolesMapper.toDtoList(groupRolesService.findAll()), HttpStatus.OK);
     }
 
-
+    @CrossOrigin
     @GetMapping("{id}")
     public ResponseEntity<?> getOne(@PathVariable Long id) throws ServiceException {
         return buildResponse(groupRolesMapper.toDto(groupRolesService.findById(id)), HttpStatus.OK);
