@@ -2,6 +2,7 @@ package kz.rbasicb.RBasicB.services.profile.impl;
 
 import kz.rbasicb.RBasicB.exceptions.ServiceException;
 import kz.rbasicb.RBasicB.models.entities.profile.User;
+import kz.rbasicb.RBasicB.repositories.profile.RoleRepository;
 import kz.rbasicb.RBasicB.repositories.profile.UserRepository;
 import kz.rbasicb.RBasicB.services.profile.UserService;
 import kz.rbasicb.RBasicB.shared.utils.codes.ErrorCode;
@@ -24,14 +25,18 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
+    private RoleRepository roleRepository;
+
     private SessionFactory hibernateFactory;
     @Autowired
     private PasswordEncoder encoder;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository,
+                           RoleRepository roleRepository,
                            EntityManagerFactory factory) {
         this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
         if (factory.unwrap(SessionFactory.class) == null) {
             throw new NullPointerException("Factory is not a hibernate factory");
         }
@@ -56,6 +61,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAllWithDeleted() {
         return userRepository.findAll();
+    }
+    public List<User> findAllByRoleId(Long id) {
+
+        return userRepository.findAllByRolesContains(roleRepository.findByDeletedAtIsNullAndId(id).get());
     }
 
     @Override

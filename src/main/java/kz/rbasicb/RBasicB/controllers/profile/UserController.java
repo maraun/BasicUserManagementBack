@@ -34,6 +34,11 @@ public class UserController extends BaseController {
     public ResponseEntity<?> getAll() {
         return buildResponse(userMapper.toDtoList(userService.findAll()), HttpStatus.OK);
     }
+    @CrossOrigin
+    @GetMapping("rid/{id}")
+    public ResponseEntity<?> getAllbyRoleId(@PathVariable Long id) {
+        return buildResponse(userMapper.toDtoList(userService.findAllByRoleId(id)), HttpStatus.OK);
+    }
 
     @GetMapping("{id}")
     public ResponseEntity<?> getOne(@PathVariable Long id) throws ServiceException {

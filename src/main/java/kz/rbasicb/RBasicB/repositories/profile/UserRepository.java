@@ -1,5 +1,6 @@
 package kz.rbasicb.RBasicB.repositories.profile;
 
+import kz.rbasicb.RBasicB.models.entities.profile.Role;
 import kz.rbasicb.RBasicB.models.entities.profile.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
     List<User> findAllByDeletedAtIsNull();
+    List<User> findAllByRolesContains(Role role);
     Optional<User> findByUsername(String username);
     Boolean existsByUsername(String username);
     Optional<User> findByProfileId(Long id);
