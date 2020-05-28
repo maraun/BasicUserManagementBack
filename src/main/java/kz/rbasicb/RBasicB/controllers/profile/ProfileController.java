@@ -6,6 +6,7 @@ import kz.rbasicb.RBasicB.models.dtos.profile.ProfileDto;
 import kz.rbasicb.RBasicB.models.entities.profile.Profile;
 import kz.rbasicb.RBasicB.models.mappers.profile.ProfileMapper;
 import kz.rbasicb.RBasicB.services.profile.ProfileService;
+import kz.rbasicb.RBasicB.services.search.HibernateProfileSearchService;
 import kz.rbasicb.RBasicB.shared.utils.responses.SuccessResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,8 @@ public class ProfileController extends BaseController {
 
     private ProfileService profileService;
     private ProfileMapper profileMapper;
+    @Autowired
+    private HibernateProfileSearchService hibernateProfileSearchService;
 
     @Autowired
     public ProfileController(ProfileService profileService, ProfileMapper profileMapper) {
@@ -59,6 +62,11 @@ public class ProfileController extends BaseController {
                 .build(), HttpStatus.OK);
     }
 
+    @GetMapping("/find/{text}")
+    @CrossOrigin
+    public ResponseEntity<?> searchByKeyword(@PathVariable String text) throws ServiceException {
+        return buildResponse(profileMapper.toDtoList(hibernateProfileSearchService.searchMultipleFieldsByKeywordQuery(text)), HttpStatus.OK);
+    }
 
 
 }
