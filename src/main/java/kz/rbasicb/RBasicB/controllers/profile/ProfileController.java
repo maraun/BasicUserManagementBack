@@ -62,9 +62,9 @@ public class ProfileController extends BaseController {
                 .build(), HttpStatus.OK);
     }
 
-    @GetMapping("/find/{text}")
+    @RequestMapping("/search")
     @CrossOrigin
-    public ResponseEntity<?> searchByKeyword(@PathVariable String text) throws ServiceException {
+    public ResponseEntity<?> searchByKeyword(@RequestParam(value = "keyword",required = false) String text) throws ServiceException {
         return buildResponse(profileMapper.toDtoList(profileSearchService.searchMultipleFieldsByKeywordQuery(text)), HttpStatus.OK);
     }
 
