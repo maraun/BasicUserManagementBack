@@ -25,6 +25,7 @@ public class ProfileSearchService {
 
         org.apache.lucene.search.Query query = queryBuilder
                 .keyword()
+                .fuzzy()
                 .onFields("firstname", "lastname", "iin").matching(text)
                 .createQuery();
         org.hibernate.search.jpa.FullTextQuery fullTextQuery
