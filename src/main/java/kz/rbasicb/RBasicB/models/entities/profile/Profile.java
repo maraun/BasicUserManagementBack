@@ -3,9 +3,6 @@ package kz.rbasicb.RBasicB.models.entities.profile;
 import kz.rbasicb.RBasicB.models.audits.AuditModel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.search.annotations.Field;
-import org.hibernate.search.annotations.Indexed;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -14,13 +11,11 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@Indexed
 /*@Builder*/
 public class Profile extends AuditModel {
-    @Field
     @Column(name="firstname")
     private String firstname;
-    @Field
+
     @Column(name="lastname")
     private String lastname;
 
@@ -29,7 +24,7 @@ public class Profile extends AuditModel {
 
     @Column(name = "previous_lastname")
     private String previouslastname;
-    @Field
+
     @Column(name = "iin")
     private String iin;
 
